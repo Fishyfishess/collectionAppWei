@@ -13,6 +13,10 @@ struct ContentView: View {
     
     //8 and 9
     @State var randomDictionary = ["CLC":"Crystal Lake Central", "CLS":"Crystal Lake South", "PR":"Prairie Ridge"]
+    
+    //18
+    let randomTuple = (name: "bobby", age: 15, gpa: 3)
+    
     var body: some View {
         VStack {
             Button("hehe"){
@@ -57,18 +61,18 @@ struct ContentView: View {
                 }
                 
                 //13
-                for(a,b) in randomDictionary{
+                for(a,_) in randomDictionary{
                     print("\(a)")
                 }
                 
                 //14
-                for(a,b) in randomDictionary{
+                for(_,b) in randomDictionary{
                     print("\(b)")
                 }
                 
                 //15
                 var initials: [String] = []
-                for(a,b) in randomDictionary{
+                for(a,_) in randomDictionary{
                     initials.append(a)
                 }
                 initials.sort()
@@ -77,24 +81,25 @@ struct ContentView: View {
                 }
                 
                 //16
-                var randomNumber = Int.random(in: 5...7)
+                let randomNumber = Int.random(in: 5...7)
                 
                 //17
                 switch randomNumber {
                 case 5:
-                    print("five, stung by a bee hive")
+                    print("Number five, look alive")
                     
                 case 6:
-                    print("six, get your life fixed")
+                    print("Number six, come get your portillo's fix")
                     
                 case 7:
-                    print("seven, ")
+                    print("seven, come enjoy your portillo's heaven")
                     
                 default:
                     print("idk man")
                 }
                 
-                //18
+                //20
+                print("name: \(randomTuple.name)\nage: \(randomTuple.age)\ngpa: \(randomTuple.gpa)")
                 
             }
         }
